@@ -29,8 +29,10 @@
 
 ####이상적인 배달비 흐름도
 ![img.png](jpg/wanted.png)
-## UI - 시스템
+## UI - 시스템..
 - 초기 기능
 ![img.png](jpg/ui.png)
 
+- 카톡 주문시
+![img.png](order.png)
 - 더 필요한 기능?
