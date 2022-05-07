@@ -1,6 +1,12 @@
 import time, win32con, win32api, win32gui, ctypes
 from pywinauto import clipboard
-kakao_room_name = '대학'
+from PyQt5 import QtWidgets
+from PyQt5.QtGui import QStandardItem, QStandardItemModel
+from PyQt5 import uic
+import sys
+from app_ui import App
+
+kakao_room_name = '허현준'
 PBYTE256 = ctypes.c_ubyte * 256
 _user32 = ctypes.WinDLL("user32")
 GetKeyboardState = _user32.GetKeyboardState
@@ -94,7 +100,7 @@ def PostKeyEx(hwnd, key, shift, specialkey):
 # text = "하이"
 # kakao_sendtext(text)
 def main():
-
+    food_list = []
     # # 핸들 _ 채팅방
     hwndMain = win32gui.FindWindow( None, kakao_room_name)
     hwndListControl = win32gui.FindWindowEx(hwndMain, None, "EVA_VH_ListControl_Dblclk", None)
@@ -107,8 +113,10 @@ def main():
 
     # 마지막 텍스트만 가져옴
     ctext = list(ctext.split('\r'))[-2]
-    print(ctext)# 내용 확인
-
-
+    print(type(ctext.replace(" ","")))# 내용 확인
+    food_list.append(ctext.replace(" ",""))
+    app = QtWidgets.QApplication(sys.argv)
+    me = App(food=food_list)
+    sys.exit(app.exec())
 if __name__ == '__main__':
     main()
