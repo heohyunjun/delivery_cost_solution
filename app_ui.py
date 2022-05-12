@@ -19,6 +19,18 @@ class App(QtWidgets.QMainWindow):
         for x in self.food:
             model.appendRow(QStandardItem(x))
         self.ui.listView.setModel(model)
+
+    def order_confirm_buttion(self):
+        pass
+
+    def order_reject_buttion(self):
+        pass
+
+    def call_rider_buttion(self):
+        pass
+
+    def cancel_rider_button(self):
+        pass
 # app = QtWidgets.QApplication(sys.argv)
 # me = App()
 # # sys.exit(app.exec())
