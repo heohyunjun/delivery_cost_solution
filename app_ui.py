@@ -2,6 +2,7 @@ from PyQt5 import QtWidgets
 from PyQt5.QtGui import QStandardItem, QStandardItemModel
 from PyQt5 import uic
 import sys
+from multiprocessing import Process, Pool
 
 class App(QtWidgets.QMainWindow):
     def __init__(self, parent=None, food=None):
@@ -20,16 +21,19 @@ class App(QtWidgets.QMainWindow):
             model.appendRow(QStandardItem(x))
         self.ui.listView.setModel(model)
 
-    def order_confirm_buttion(self):
+    def order_confirm_button(self):
         pass
 
-    def order_reject_buttion(self):
+    def order_reject_button(self):
         pass
 
-    def call_rider_buttion(self):
+    def call_rider_button(self):
         pass
 
     def cancel_rider_button(self):
+        pass
+
+    def check_new_text(self):
         pass
 # app = QtWidgets.QApplication(sys.argv)
 # me = App()
